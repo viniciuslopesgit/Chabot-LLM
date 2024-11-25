@@ -28,7 +28,7 @@ def load_txt(path):
         return f.read()
 
 # Divide o texto em "chunks" de tamanho adequado
-def chunk_text(text, max_chunk_size=3000):
+def chunk_text(text, max_chunk_size=200):
     chunks = []
     while len(text) > max_chunk_size:
         break_point = text.rfind('\n', 0, max_chunk_size)
