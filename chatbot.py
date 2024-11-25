@@ -1,8 +1,8 @@
 import requests
 import json
 import pymupdf
-from sentence_transformers import SentenceTransformer
 import numpy as np
+from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Configurações do Ollama
@@ -107,14 +107,14 @@ def main():
 
     print(f"Bem-vindo ao assistente {MODEL_NAME}!")
     while True:
-        pergunta = input("\nVocê: ")
+        pergunta = input("\n >> Você: ")
         if pergunta.lower() in ["sair", "exit", "quit"]:
             print("Encerrando o programa. Até logo!")
             break
         
         # Responde com base no conteúdo do PDF usando embeddings
         pdf_answer = pdf_search_answer("pdf/txt/output.txt", pergunta)
-        print("\nOllama: ", pdf_answer)
+        print("\n >> Ollama: ", pdf_answer)
 
 if __name__ == "__main__":
     main()
