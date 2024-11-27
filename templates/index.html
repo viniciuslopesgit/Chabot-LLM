@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot IPBRICK</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-window" id="chatWindow">
+      <!-- Mensagens serão exibidas aqui -->
+    </div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Mensagem" />
+      <button id="sendButton">></button>
+    </div>
+  </div>
+
+  <script>
+    const chatWindow = document.getElementById('chatWindow');
+    const userInput = document.getElementById('userInput');
+    const sendButton = document.getElementById('sendButton');
+
+    sendButton.addEventListener('click', () => {
+      const userMessage = userInput.value.trim();
+      if (userMessage) {
+        displayMessage(userMessage, 'user');
+        userInput.value = '';
+
+      fetch('/ask', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: userMessage })
+      })
+      .then(response => response.json())
+      .then(data => {
+        displayMessage(data.response, 'bot');
+      })
+      .catch(error => {
+        console.error('Erro', error);
+        displayMessage('Desculpe, houve um erro.', 'bot');
+      });
+      }
+    });
+
+    function displayMessage(message, sender) {
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('message', sender);
+      if (sender == 'bot')
+    {
+      messageElement.innerHTML = message;
+    }
+    else{
+      messageElement.textContent = message;
+    }
+      chatWindow.appendChild(messageElement);
+      chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll automático
+    }
+  </script>
+</body>
+</html>

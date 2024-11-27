@@ -6,6 +6,7 @@ from pdf_upload import pdf_extract
 from chat_history import update_history, get_conversation_context
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
+import app
 
 OLLAMA_URL = "http://172.17.0.3:11434"  # Endereço da instância do Ollama
 MODEL_NAME = "qwen2:1.5b"
@@ -24,7 +25,7 @@ def pdf_search_answer(path, question):
     chunks = chunk_text(text)
     # Recupera o chunk mais relevante
     best_chunk = retrieve_best_chunk(question, chunks)
-    conversation_context = get_conversation_context()
+    conversation_context = app.get_conversation_context_from_session()
     # Inclui o histórico no cálculo da similaridade (aqui consideramos também o contexto da conversa)
     conversation_text = " ".join([entry["content"] for entry in conversation_context])  # Histórico como string
     extended_question = f"{conversation_text} {question}"  # Combina histórico com a nova pergunta
@@ -33,7 +34,7 @@ def pdf_search_answer(path, question):
     print(f"Similaridade entre a pergunta e o chunk: {similarity:.4f}")
     
     # Cria o prompt para o Ollama com base no chunk relevante e no histórico
-    if similarity >= 0.1:
+    if similarity >= 0.05:
         prompt = f"""
         Baseado no seguinte texto:
         {best_chunk}
@@ -82,8 +83,9 @@ def interagir_ollama_stream(pergunta):
                     try:
                         data = json.loads(line)
                         if "message" in data and "content" in data["message"]:
-                            print(data["message"]["content"], end="", flush=True)
-                            answer += data["message"]["content"]
+                            part = data["message"]["content"]
+                            print(part, end="", flush=True)
+                            answer += part
                         if data.get("done", False):
                             break
                     except json.JSONDecodeError:
@@ -106,5 +108,7 @@ def main():
             break
         # Responde com base no conteúdo do PDF usando embeddings
         pdf_search_answer("pdf/txt/output.txt", pergunta)
+
+
 if __name__ == "__main__":
     main()

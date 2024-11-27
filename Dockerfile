@@ -20,4 +20,4 @@ COPY . /app
 
 EXPOSE 11434
 
-CMD ["python3", "chatbot.py"]
+CMD ["python3", "app.py"]

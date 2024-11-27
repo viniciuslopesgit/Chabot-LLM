@@ -29,7 +29,7 @@ def get_embeddings(text_list):
     return embedder.encode(text_list)
 
 # Função para recuperar a melhor resposta com base nos embeddings
-def retrieve_best_chunk(question, chunks, min_similarity=0.3):
+def retrieve_best_chunk(question, chunks, min_similarity=0.2):
     # Gera embeddings para a pergunta e para os chunks
     question_embedding = get_embeddings([question])[0]
     chunk_embeddings = get_embeddings(chunks)

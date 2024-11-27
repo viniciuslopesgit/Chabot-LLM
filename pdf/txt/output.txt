@@ -2,7 +2,9 @@ IPBRICK - Vers˜ao 6.0
 Manual Instala¸c˜ao
 IPBRICK SA
 Agosto 2014
-2
+
+================================================================================
+2
 Copyright c⃝IPBRICK SA
 Todos os direitos reservados. Agosto 2014.
 A informa¸c˜ao contida neste documento pode ser alterada sem aviso pr´evio. As
@@ -10,7 +12,9 @@ explica¸c˜oes apresentadas, os dados t´ecnicos, as conﬁgura¸c˜oes e as re
 s˜ao precisas e ﬁ´aveis. No entanto, n˜ao possuem garantias expressas ou impl´ıcitas..
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-Conte´udo
+
+================================================================================
+Conte´udo
 1
 Objectivo deste documento
 5
@@ -126,7 +130,9 @@ Groupware . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 33
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-4
+
+================================================================================
+4
 CONTE ´UDO
 4.3.10 IPBrick - Instant Messaging . . . . . . . . . . . . . . . . . .
 33
@@ -205,18 +211,24 @@ Servi¸cos a serem prestados neste servidor . . . . . . . . . . . . . . .
 59
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-Cap´ıtulo 1
+
+================================================================================
+Cap´ıtulo 1
 Objectivo deste documento
 Este manual cont´em instru¸c˜oes importantes e ´uteis sobre o procedimento de in-
 stala¸c˜ao da IPBrick e tenta gui´a-lo ao longo de todas as etapas necess´arias `a sua
 conclus˜ao.
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-6
+
+================================================================================
+6
 Objectivo deste documento
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-Cap´ıtulo 2
+
+================================================================================
+Cap´ıtulo 2
 Antes de Come¸car
 Aten¸c˜ao:
 • Ao arrancar a partir do DVD IPBRICK a instala¸c˜ao do software inicia-se
@@ -226,11 +238,15 @@ imediatamente.
 consulte a sec¸c˜ao- 4.2 deste documento).
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-8
+
+================================================================================
+8
 Antes de Come¸car
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-Cap´ıtulo 3
+
+================================================================================
+Cap´ıtulo 3
 Instala¸c˜ao da IPBRICK
 A instala¸c˜ao de um servidor IPBrick ´e feita utilizando um s´o DVD.
 3.1
@@ -250,7 +266,9 @@ Procedimento de Instala¸c˜ao
 4. O log´otipo IPBRICK ser´a visualizado assim como o men´u de arranque.
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-10
+
+================================================================================
+10
 Instala¸c˜ao da IPBRICK
 5. Dez segundos depois o processo autom´atico de instala¸c˜ao ´e iniciado.
 Nota: Se desejar parar o temporizador de instala¸c˜ao autom´atica, pressione
@@ -276,7 +294,9 @@ BRICK pr´evia. De facto, a IPBRICK auto-detecta tamb´em (por favor con-
 sulte a Sec¸c˜ao - 3.4.3 deste documento) a instala¸c˜ao IPBRICK anterior e, tal
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-3.3 Men´u do Instalador
+
+================================================================================
+3.3 Men´u do Instalador
 11
 como no caso de outro sistema operativo, avisa-o que ser´a importante fazer o
 backup de dados e de aplica¸c˜oes. Esta op¸c˜ao oferece-lhe Esta op¸c˜ao tamb´em
@@ -302,7 +322,9 @@ incluimos o EXT3;
 a partir da EXT3, oferecendo mais funcionalidades: Capacidade de
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-12
+
+================================================================================
+12
 Instala¸c˜ao da IPBRICK
 Resize, assim como permite o uso de discos de maior capacidade, algo
 que o EXT3 n˜ao oferecia;
@@ -315,7 +337,9 @@ se existir uma instala¸c˜ao IPBRICK pr´evia. Tome nota que, ir´a perder todo
 os dados do seu servidor!
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-3.3 Men´u do Instalador
+
+================================================================================
+3.3 Men´u do Instalador
 13
 Depois de ter selecionado a op¸c˜ao New Installation, poder´a selecionar, a
 par com a op¸c˜ao Upgrade Reinstall o sistema de ﬁcheiros a ser utilizado:
@@ -338,7 +362,9 @@ Figura 3.1: IPBRICK Installation - Help Index
 boot (Figura 3.2);
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-14
+
+================================================================================
+14
 Instala¸c˜ao da IPBRICK
 Figura 3.2: IPBRICK Installation - Boot methods
 Op¸c˜ao Partitions
@@ -371,7 +397,9 @@ comando de 10GB para todas as parti¸c˜oes, os 20GB restantes ser˜ao di-
 vididos em partes iguais pela home1 e home2
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-3.3 Men´u do Instalador
+
+================================================================================
+3.3 Men´u do Instalador
 15
 Se cometeu um erro, uma p´agina de aviso ser´a exibida (Figura 3.3).
 Figura 3.3: Instala¸c˜ao IPBrick - Aviso de erro nas parti¸c˜oes
@@ -388,7 +416,9 @@ Requisitos
 • Uma m´aquina com uma porta USB
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-16
+
+================================================================================
+16
 Instala¸c˜ao da IPBRICK
 Nota: Se possui na pen dados, que deseja manter, guarde uma c´opia noutra
 localiza¸c˜ao. Porque, para montar a imagem, a pen ser´a formatada e perder´a
@@ -411,7 +441,9 @@ Create Bootable Pendrive
 (i) Pressione qualquer tecla para reiniciar a m´aquina.
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-3.4 Procedimento normal de instala¸c˜ao
+
+================================================================================
+3.4 Procedimento normal de instala¸c˜ao
 17
 Agora, poder´a utilizar a pen para instalar a IPBrick noutro computador,
 basta conﬁgurar a BIOS desse PC para arrancar correctamente a partir da
@@ -437,7 +469,9 @@ O modo gr´aﬁco (Dialog) apresenta uma barra de progresso ´e ´e a apresenta�
 predeﬁnida.
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-18
+
+================================================================================
+18
 Instala¸c˜ao da IPBRICK
 3.4.2
 Modo Texto
@@ -467,7 +501,9 @@ RESIZING HOMEs to FULL disk size
 WRITING PARTITION TABLE TO HDD...
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-3.4 Procedimento normal de instala¸c˜ao
+
+================================================================================
+3.4 Procedimento normal de instala¸c˜ao
 19
 7. O procedimento autom´atico de auto instala¸c˜ao inicia-se novamente, detectando
 que a tabela de parti¸c˜oes foi aplicada ao disco.
@@ -509,7 +545,9 @@ Installation scripts ENDED.
 arrancar a partir da unidade do disco r´ıgido (HDD);
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-20
+
+================================================================================
+20
 Instala¸c˜ao da IPBRICK
 13. Ap´os a sequˆencia de arranque da BIOS, esta exibir´a a rotina de arranque
 (Grub);
@@ -530,7 +568,9 @@ um outro aviso, alertando-o para o facto e questionado-o se deseja proseguir com
 a instala¸c˜ao.
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-3.5 Mensagens de Erro
+
+================================================================================
+3.5 Mensagens de Erro
 21
 3.5
 Mensagens de Erro
@@ -553,7 +593,9 @@ Este procedimento utiliza a utilidade fdisk para discos com capacidade
 m´axima de 2TB.
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-22
+
+================================================================================
+22
 Instala¸c˜ao da IPBRICK
 Os erros cr´ıticos devem-se a:
 • Falha no hardware: o disco n˜ao existe ou tem uma conﬁgura¸c˜ao errada (e.g:
@@ -603,7 +645,9 @@ RAIDTYPE=1
 -> It’s the RAID type. Only this raid type is supported!
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-3.6 Instala¸c˜ao Personalizada
+
+================================================================================
+3.6 Instala¸c˜ao Personalizada
 23
 You should know speciﬁcally the correct designation of hard drives devices
 before the ﬁle creation, which depends of the used technology: IDE, SCSI, SATA
@@ -636,11 +680,15 @@ Note: The ﬁles must be saved in ASCII format. If you want to test that they
 are, you can do file <filename> in Linux console.
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-24
+
+================================================================================
+24
 Instala¸c˜ao da IPBRICK
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-Cap´ıtulo 4
+
+================================================================================
+Cap´ıtulo 4
 Gerir a IPBrick
 4.1
 Conﬁgura¸c˜ao da Rede
@@ -661,7 +709,9 @@ para implementar as sempre importantes primeiras conﬁgura¸c˜oes (consulte po
 favor as Sec¸c˜oes 4.3 - Logins e Passwords e 8 - Procedimentos Importantes).
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-26
+
+================================================================================
+26
 Gerir a IPBrick
 Figura 4.1: Login IPBRICK
 Depois de se autenticar encontrar´a o sempre ´util ´ıcone de Consola-Debug, lo-
@@ -680,7 +730,9 @@ unidade de gest˜ao (por exemplo, um PC port´atil) e `a placa de rede da IPBRIC
 Figura 4.3: Direct connection between an IPBRICK and a PC
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-4.2 Liga¸c˜ao `a IPBRICK
+
+================================================================================
+4.2 Liga¸c˜ao `a IPBRICK
 27
 Neste cen´ario, a conﬁgura¸c˜ao da rede da unidade de gest˜ao pode ser preparada
 para receber o endere¸co IP autom´atico e a conﬁgura¸c˜ao DNS - cliente DHCP.
@@ -715,7 +767,9 @@ Procedimento de renova¸c˜ao do endere¸co IP
 6. To close this window, type exit e pressione [ENTER]
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-28
+
+================================================================================
+28
 Gerir a IPBrick
 Como veriﬁcar o seu endere¸co IP
 Para veriﬁcar o seu endere¸co IP, proceda
@@ -742,7 +796,9 @@ No exemplo seguinte, usaremos uma unidade de gest˜ao com o sistema operativo
 MS Windows:
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-4.2 Liga¸c˜ao `a IPBRICK
+
+================================================================================
+4.2 Liga¸c˜ao `a IPBRICK
 29
 Procedimento para conﬁgurar um endere¸co IP est´atico
 1. Press the [windows] key
@@ -777,7 +833,9 @@ quer browser da web (MS Internet Explorer, Firefox, Opera, Chrome)
 O endere¸co URL ´e: https://ipbrick.domain.com ou https://192.168.69.199.
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-30
+
+================================================================================
+30
 Gerir a IPBrick
 4.3
 Logins e Passwords
@@ -813,7 +871,9 @@ Nota: Ap´os instala¸c˜ao da IPBrick este servi¸co n˜ao est´a activo, mas p
 tivado mais tarde atrav´es do interface web em IPBrick.C- >> E-Mail- >> C´opia de correio.
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-4.3 Logins e Passwords
+
+================================================================================
+4.3 Logins e Passwords
 31
 4.3.4
 IPBRICK - IPBRICK.SEC AntiSpam
@@ -846,7 +906,9 @@ e sqlserver
 Figura 4.5: Altera¸c˜ao das credenciais de administra¸c˜ao
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-32
+
+================================================================================
+32
 Gerir a IPBrick
 4.3.7
 IPBRICK.SEC Anti-Spam
@@ -878,7 +940,9 @@ V´a `as op¸c˜oes de administra¸c˜ao.
 Figura 4.6: Altera¸c˜ao credenciais de administrador
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-4.3 Logins e Passwords
+
+================================================================================
+4.3 Logins e Passwords
 33
 4.3.9
 Groupware
@@ -908,11 +972,15 @@ Pode aceder via FTP a um ﬁcheiro .CSV que regista as estatisticas de chamadas.
 • Login: L1opardo
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-34
+
+================================================================================
+34
 Gerir a IPBrick
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-Cap´ıtulo 5
+
+================================================================================
+Cap´ıtulo 5
 Mais informa¸c˜ao
 5.1
 Suporte T´ecnico
@@ -924,11 +992,15 @@ Links ´Uteis
 • www.iportaldoc.com
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-36
+
+================================================================================
+36
 Mais informa¸c˜ao
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-Cap´ıtulo 6
+
+================================================================================
+Cap´ıtulo 6
 Apˆendice A - IPBrick.GT
 Este cap´ıtulo cont´em as instru¸c˜oes necess´arias para uma interliga¸c˜ao correcta da
 IPBBrick.GT (Figura 6.1) `a rede do cliente existente e ao acesso `a telefonia.
@@ -944,7 +1016,9 @@ Windows HyperTerminal pode ser usado com estas conﬁgura¸c˜oes:
 baud rate 19200, parity none, data bits 8 and stop bits 1
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-38
+
+================================================================================
+38
 Apˆendice A - IPBrick.GT
 • Display: Um pacote .deb pode ser instalado na IPBrick para mostrar o
 estado da porta das placas de ethernet/telefonia;
@@ -970,7 +1044,9 @@ Comunica¸c˜oes Digitais
 INas linhas digitais, as placas IPBbrick.GT podem ser ISDN BRI ou ISDN PRI.
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-6.3 Comunica¸c˜oes Digitais
+
+================================================================================
+6.3 Comunica¸c˜oes Digitais
 39
 6.3.1
 BRI
@@ -997,7 +1073,9 @@ Leds
 3Terminal Equipment
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-40
+
+================================================================================
+40
 Apˆendice A - IPBrick.GT
 Figura 6.4: Interliga¸c˜ao entre IPBrick, PSTN e PBX
 • Verde ﬁxo: Chamada actual usando essa porta.
@@ -1019,7 +1097,9 @@ Leds
 4Primary Rate Interface
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-6.3 Comunica¸c˜oes Digitais
+
+================================================================================
+6.3 Comunica¸c˜oes Digitais
 41
 Figura 6.7: Placa PRI
 Pinout
@@ -1040,7 +1120,9 @@ numa porta da placa de telefonia IPBrick. O esquema de liga¸c˜ao pode ser
 visualizado na Figura 6.13;
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-42
+
+================================================================================
+42
 Apˆendice A - IPBrick.GT
 • RJ-45: A liga¸c˜ao entre PBX, IPBbrick.GT e PSTN ´e feita por cabos UTP
 usando conectores RJ-45 (Figura 6.12);
@@ -1050,7 +1132,9 @@ Figura 6.11: Modem PRI e liga¸c˜ao PBX por UTP
 Figura 6.12: IPBrick a interceptar a linha PRI e PBX usando s´o os cabos UTP
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-6.3 Comunica¸c˜oes Digitais
+
+================================================================================
+6.3 Comunica¸c˜oes Digitais
 43
 Figura 6.13: IPBrick a interceptar a linha PRI e PBX usando baluns
 NOTA: Para as liga¸c˜oes directas BRI/PRI que usam UDP, podem ser uti-
@@ -1058,11 +1142,15 @@ lizados cabos normais de rede ethernet (4 pares). N˜ao ´e necess´ario usar ca
 espec´ıﬁcos BRI/PRI UDP (2 pares).
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-44
+
+================================================================================
+44
 Apˆendice A - IPBrick.GT
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-Cap´ıtulo 7
+
+================================================================================
+Cap´ıtulo 7
 Apˆendice B - Recupera¸c˜ao de
 Desastre
 Aquando da instala¸c˜ao da IPBRICK existe uma conﬁgura¸c˜ao denominada de
@@ -1090,7 +1178,9 @@ Para alterar o nome da pen USB para IPBRICK-D basta clicar com o bot˜ao direito
 do rato sobre o ´ıcone correspondente em O Meu Computador e selecionar Rename.
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-46
+
+================================================================================
+46
 Apˆendice B - Recupera¸c˜ao de Desastre
 Figura 7.1: Alterar o nome da pen USB
 Digite IPBRICK-D
@@ -1101,7 +1191,9 @@ Para veriﬁcar se a pen est´a formatada em NTFS ou FAT32 basta clicar com o bo
 direito do rato sobre o ´ıcone correspondente e selecionar Properties.
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-47
+
+================================================================================
+47
 Figura 7.3: Propriedades pen USB
 Veriﬁque se est´a em FAT32 (n˜ao ´e nescess´aria qualquer formata¸c˜ao) ou NTFS
 (ter´a de formatar a pen para FAT32) em File System.
@@ -1110,14 +1202,18 @@ Se indicar NTFS ter´a de a formatar. Para o fazer, basta clicar com o bot˜ao
 direito do rato sobre o ´ıcone da pen e selecionar Format.
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-48
+
+================================================================================
+48
 Apˆendice B - Recupera¸c˜ao de Desastre
 Figura 7.5: Pen USB - Format
 Na nova janela selecione FAT32, veriﬁque a label (nome) e clique em Start.
 Figura 7.6: Pen USB - Formata¸c˜ao
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-Cap´ıtulo 8
+
+================================================================================
+Cap´ıtulo 8
 Apˆendice C - Procedimentos
 Importantes
 Depois de instalar a IPBRICK ´e necess´ario cumprir os procedimentos descritos
@@ -1132,7 +1228,9 @@ sistema, e se clicar nele ter´a acesso a uma nova janela com a enumera¸c˜ao d
 corre¸c˜oes e veriﬁca¸c˜oes necess´arias por fazer.
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-50
+
+================================================================================
+50
 Apˆendice C - Procedimentos Importantes
 Figura 8.2: Janela de Alertas
 Cada item na enumera¸c˜ao oferece-lhe a chance de alterar conﬁgura¸c˜oes impor-
@@ -1150,7 +1248,9 @@ clicar no bot˜ao Done para que o aviso seja removido da lista.
 Figura 8.5: Alerta - Bot˜ao Done
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-8.1 Credenciais do utilizador Administrador
+
+================================================================================
+8.1 Credenciais do utilizador Administrador
 51
 Figura 8.6: Janela sem o alerta que foi resolvido
 Nas sec¸c˜oes seguintes, iremos abordar cada uma das conﬁgura¸c˜oes necess´arias
@@ -1165,7 +1265,9 @@ Figura 8.8: Lista Utilizadores
 Clique no seu nome e na nova p´agina clique no link Modify.
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-52
+
+================================================================================
+52
 Apˆendice C - Procedimentos Importantes
 Figura 8.9: Utilizador Administrator
 Altere as deﬁni¸c˜oes e clique no bot˜ao Modify.
@@ -1176,7 +1278,9 @@ Para alterar as cedenciais aceda a:
 Advanced Configurations > System > System Users
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-8.2 Credenciais dos Utilizadores de Sistema
+
+================================================================================
+8.2 Credenciais dos Utilizadores de Sistema
 53
 Figura 8.11: Advanced Conﬁgurations - System - System Users
 Na nova p´agina, poder´a ver que o nome de utilizador e o login est˜ao arranjados
@@ -1189,7 +1293,9 @@ Modify.
 Figura 8.13: Link Modify
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-54
+
+================================================================================
+54
 Apˆendice C - Procedimentos Importantes
 Na nova p´agina, digite a senha antiga e, em seguida, digite e redigite a nova
 para conﬁrm´a-la. Clique no bot˜ao Modify para aplicar as novas deﬁni¸c˜oes.
@@ -1205,7 +1311,9 @@ Altere as credenciais, dos valores por omiss˜ao para os novos (n’˜ao se esqu
 de redigitara nova passe) e clique no bot˜ao Modify.
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-8.4 CAFE e PostGresSQL
+
+================================================================================
+8.4 CAFE e PostGresSQL
 55
 Figura 8.17: Modiﬁca¸c˜ao das credenciais do administrador do sistema
 8.4
@@ -1225,7 +1333,9 @@ Alerts
 Figura 8.18: Op¸c˜ao de Alertas
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-56
+
+================================================================================
+56
 Apˆendice C - Procedimentos Importantes
 Na nova p´agina, pode ver o endere¸co de origem (o que ir´a enviar os e-mails de
 alerta) e o endere¸co de destino (aquele que ir´a receber esses alertas), por omiss˜ao,
@@ -1244,7 +1354,9 @@ place
 Clique em Definitions.
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-8.7 Email para o envio das notiﬁca¸c˜oes dos backups das BDs
+
+================================================================================
+8.7 Email para o envio das notiﬁca¸c˜oes dos backups das BDs
 57
 Figura 8.22: Link Deﬁnitions
 Este e-mail vai receber os ﬁcheiros de conﬁgura¸c˜oes do sistema. ´E muito im-
@@ -1261,7 +1373,9 @@ ups das BDs
 Aceda a:
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-58
+
+================================================================================
+58
 Apˆendice C - Procedimentos Importantes
 Figura 8.25:
 Advanced Conﬁgurations - Disaster Recovery - Applications -
@@ -1275,7 +1389,9 @@ Clique em Modify para que lhe surja a nova p´agina.
 Figura 8.28: P´agina de Modifca¸c˜ao
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-8.8 Servi¸cos a serem prestados neste servidor
+
+================================================================================
+8.8 Servi¸cos a serem prestados neste servidor
 59
 Altere os campos: notiﬁcar de endere¸co, endere¸co de Administrador, login e
 senha do backup das bases de dados PostgreSQL.
@@ -1290,7 +1406,9 @@ Clique em Modify e altere o estado e a forma de in´ıcio do servi¸co.
 Em State pode selecionar Enable (Activo) ou Disable (Inactivo).
 IPBRICK SA - 2014
 Manual Instala¸c˜ao - Vers˜ao 6.0
-60
+
+================================================================================
+60
 Apˆendice C - Procedimentos Importantes
 Figura 8.31: State
 Em Start pode selecionar Autom´atico ou Manual.
@@ -1300,4 +1418,5 @@ as mudan¸cas.
 Figura 8.33: Bot˜ao Update
 Manual Instala¸c˜ao - Vers˜ao 6.0
 IPBRICK SA - 2014
-
+
+================================================================================
