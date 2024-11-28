@@ -31,6 +31,6 @@ def get_conversation_context_from_session():
     return session.get("history", [])
 
 
-if "__main__" == __name__:
-    app.run(debug=True, host="0.0.0.0")
+if __name__ == "__main__":
+    app.run()
 
