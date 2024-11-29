@@ -13,6 +13,6 @@ ollama run qwen2:1.5b
 ajustar o ip para o ip local do container
 
 server gunicorn
-python3 -m gunicorn -b 0.0.0.0:8888 app:app --workers 4 --worker-class gevent &
+python3 -m gunicorn -b 0.0.0.0:5000 app:app --workers 4 --worker-class gevent &
 nginx
 vim /etc/nginx/nginx.config

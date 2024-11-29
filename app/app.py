@@ -32,5 +32,4 @@ def get_conversation_context_from_session():
 
 
 if __name__ == "__main__":
-    app.run()
-
+    app.run(debug=True, host="0.0.0.0", port=5001)

@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  flask-app:
+    build:
+      context: ./app
+    container_name: flask-app
+    ports:
+      - "5000:5000"  # Expor a porta 5000 para a aplicação Flask
+    networks:
+      - app-network
+    depends_on:
+      - ollama-server
+    environment:
+      - OLLAMA_URL=http://ollama-server:11434  # Defina o URL do Ollama no container
+
+  ollama-server:
+    image: ollama/ollama:latest  # Supondo que o Ollama tenha uma imagem oficial no Docker Hub
+    container_name: ollama-server
+    ports:
+      - "11434:11434"  # A porta 11434 é mapeada para acessar o serviço
+    networks:
+      - app-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "8888:8888"  # Expor a porta 80 para o Nginx
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - app-network
+    depends_on:
+      - flask-app
+
+networks:
+  app-network:
+    driver: bridge

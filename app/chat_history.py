@@ -7,4 +7,4 @@ def update_history(user_message, bot_response):
     #print(f"\n {bot_response}")
 
 def get_conversation_context():
-    return conversation_history[-3:]
+    return conversation_history[-1:]

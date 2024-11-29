@@ -3,3 +3,5 @@ pymupdf
 numpy
 sentence-transformers
 cosine-similarity
+gunicorn
+gevent

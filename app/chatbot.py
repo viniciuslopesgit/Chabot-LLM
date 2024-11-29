@@ -8,7 +8,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 import app
 
-OLLAMA_URL = "http://172.17.0.3:11434"  # Endereço da instância do Ollama
+OLLAMA_URL = "http://ollama-server:11434"  # Endereço da instância do Ollama
 MODEL_NAME = "qwen2:1.5b"
 
 # Calcula a similaridade entre a pergunta e o chunk
@@ -34,7 +34,7 @@ def pdf_search_answer(path, question):
     print(f"Similaridade entre a pergunta e o chunk: {similarity:.4f}")
     
     # Cria o prompt para o Ollama com base no chunk relevante e no histórico
-    if similarity >= 0.05:
+    if similarity >= 0.02:
         prompt = f"""
         Baseado no seguinte texto:
         {best_chunk}
@@ -108,7 +108,3 @@ def main():
             break
         # Responde com base no conteúdo do PDF usando embeddings
         pdf_search_answer("pdf/txt/output.txt", pergunta)
-
-
-if __name__ == "__main__":
-    main()
