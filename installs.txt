@@ -1,16 +1,18 @@
 cd app/
 
 apt update
-apt install python3 -y
-apt install python3.10-venv -y
-apt install pip -y
-apt install nginx
+apt install python3 python3.10-venv pip gunicorn git -y
 
-make menv
+git clone https://github.com/viniciuslopesgit/chatbot.git
+cd chatbot
+python3 -m venv menv
+source menv/bin/activate
 pip install -r requirements.txt
-install ollama server (llama)
-run app
+ollama run qwen2:1.5b
+
+ajustar o ip para o ip local do container
 
 server gunicorn
-ginix
-canddy
+python3 -m gunicorn -b 0.0.0.0:8888 app:app --workers 4 --worker-class gevent &
+nginx
+vim /etc/nginx/nginx.config
