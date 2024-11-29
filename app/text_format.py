@@ -1,7 +1,7 @@
 import re
 import textwrap
 
-def formatar_texto(texto, largura=80):
+def formatar_texto(texto, largura=100):
     """Formata o texto para melhor apresentação."""
     paragrafos = texto.strip().split("\n")
     texto_formatado = []

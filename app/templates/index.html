@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-  <>
   <div class="chat-container">
     <div class="chat-window" id="chatWindow">
       <!-- Mensagens serão exibidas aqui -->
@@ -23,17 +22,19 @@
     const userInput = document.getElementById('userInput');
     const sendButton = document.getElementById('sendButton');
 
+    let isProcessing = false; // Variável de controle para processar mensagens
+
     // Envia a mensagem quando o botão de enviar é clicado
     sendButton.addEventListener('click', () => {
       const userMessage = userInput.value.trim();
-      if (userMessage) {
+      if (userMessage && !isProcessing) {
         sendMessage(userMessage);
       }
     });
 
     // Envia a mensagem ao pressionar Enter
     userInput.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter') {
+      if (event.key === 'Enter' && !isProcessing) {
         event.preventDefault(); // Impede o comportamento padrão de nova linha
         const userMessage = userInput.value.trim();
         if (userMessage) {
@@ -46,6 +47,8 @@
     function sendMessage(userMessage) {
       displayMessage(userMessage, 'user');
       userInput.value = '';
+      toggleSendButton(false); // Desativa o botão de enviar
+      isProcessing = true; // Bloqueia envio enquanto processa
 
       fetch('/ask', {
         method: 'POST',
@@ -61,6 +64,10 @@
       .catch(error => {
         console.error('Erro', error);
         displayMessage('Desculpe, houve um erro.', 'bot');
+      })
+      .finally(() => {
+        toggleSendButton(true); // Reativa o botão de enviar
+        isProcessing = false; // Permite envio novamente
       });
     }
 
@@ -76,6 +83,23 @@
       chatWindow.appendChild(messageElement);
       chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll automático
     }
+
+    // Função que ativa/desativa o botão de enviar
+    function toggleSendButton(isEnabled) {
+      sendButton.disabled = !isEnabled;
+      sendButton.style.cursor = isEnabled ? 'pointer' : 'not-allowed';
+    }
+
+    // Função para verificar se o input tem valor e alterar o estilo do botão
+    userInput.addEventListener('input', () => {
+      if (userInput.value.trim()) {
+        sendButton.classList.add('active'); // Adiciona a classe 'active' se o campo não estiver vazio
+      } else {
+        sendButton.classList.remove('active'); // Remove a classe 'active' se o campo estiver vazio
+      }
+    });
+
+
   </script>
 </body>
 </html>

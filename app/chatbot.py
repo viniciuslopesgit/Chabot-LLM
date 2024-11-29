@@ -8,7 +8,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 import app
 
-OLLAMA_URL = "http://ollama-server:11434"  # Endereço da instância do Ollama
+OLLAMA_URL = "http://172.18.0.2:11434"  # Endereço da instância do Ollama
 MODEL_NAME = "qwen2:1.5b"
 
 # Calcula a similaridade entre a pergunta e o chunk

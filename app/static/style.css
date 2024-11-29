@@ -83,7 +83,7 @@ body {
   height: 37px;
   margin-left: 10px;
   margin-top: 7px;
-  background-color: #393b3d;
+  background-color: #54595F;
   border: none;
   border-radius: 50%; 
   color: white;
@@ -95,10 +95,19 @@ body {
   text-align: center;
 }
 
-.chat-input button:hover {
-  background-color: #292b2b;
-  transition: width 2s, height 4s;
+/* Estilo quando o botão está ativo (pressionado) */
+#sendButton.active {
+  background-color: #242725; /* Cor de fundo do botão quando ativo */
+  color: white; /* Cor do texto quando pressionado */
+  transform: scale(0.95); /* Efeito de botão pressionado */
 }
+
+/* Estilo para o botão desativado */
+#sendButton:disabled {
+  background-color: #393b3d;
+  cursor: not-allowed;
+}
+
 
 /* Mensagens do bot */
 .message.bot {
