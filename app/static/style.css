@@ -16,6 +16,24 @@ body {
   overflow: hidden;
 }
 
+.hello {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; 
+  padding: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  background: linear-gradient(80deg, #57ca61, #338AFF, #FFA63D, #FF3D77, #338AFF, #3CF0C5);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  -webkit-background-clip: text; /* Faz o gradiente aplicar-se apenas ao texto */
+  -webkit-text-fill-color: transparent; /* Deixa o fundo do texto transparente */
+  background-clip: text; /* Compatibilidade com navegadores modernos */
+  text-fill-color: transparent; /* Compatibilidade adicional */
+}
+
 .chat-container {
   display: flex;
   flex-direction: column;
@@ -108,7 +126,6 @@ body {
   cursor: not-allowed;
 }
 
-
 /* Mensagens do bot */
 .message.bot {
   border-radius: 5px;
@@ -128,6 +145,27 @@ body {
 }
 
 
+.cursor {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(80deg, #57ca61, #338AFF, #FFA63D, #FF3D77, #338AFF, #3CF0C5);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  margin-left: 5px;
+}
 
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 

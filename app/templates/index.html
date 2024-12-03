@@ -9,6 +9,9 @@
 <body>
   <div class="chat-container">
     <div class="chat-window" id="chatWindow">
+        <div class="hello">
+            <p>Como posso te ajudar?</p>
+        </div>
       <!-- Mensagens serão exibidas aqui -->
     </div>
     <div class="chat-input">
@@ -17,7 +20,7 @@
     </div>
   </div>
 
-    <script>
+  <script>
     const chatWindow = document.getElementById('chatWindow');
     const userInput = document.getElementById('userInput');
     const sendButton = document.getElementById('sendButton');
@@ -41,7 +44,12 @@
         }
     });
 
+    const helloDiv = document.querySelector('.hello');
     function sendMessage(userMessage) {
+        if (helloDiv) {
+            helloDiv.style.display = 'none';
+        }
+
         displayMessage(userMessage, 'user');
         userInput.value = '';
         toggleSendButton(false);
@@ -49,26 +57,31 @@
 
         // Cria um placeholder para a mensagem do bot
         const botPlaceholder = displayMessage('', 'bot');
+        const cursor = document.createElement('span');
+        cursor.classList.add('cursor');
+        cursor.textContent = '';
+        botPlaceholder.appendChild(cursor); // Adiciona o cursor no final
 
-        // Configura a conexão de streaming
         const eventSource = new EventSource(`/ask?message=${encodeURIComponent(userMessage)}`);
-
         eventSource.onmessage = (event) => {
             const chunk = event.data;
             if (chunk) {
-                const formattedChunk = formatText(chunk);
-                botPlaceholder.innerHTML += formattedChunk;
+                cursor.remove(); // Remove o cursor antes de atualizar o texto
+                botPlaceholder.innerHTML += chunk;
+                botPlaceholder.appendChild(cursor); // Re-adiciona o cursor no final
                 chatWindow.scrollTop = chatWindow.scrollHeight;
             }
         };
 
         eventSource.onerror = () => {
+            cursor.remove();
             eventSource.close();
             toggleSendButton(true);
             isProcessing = false;
         };
 
         eventSource.onclose = () => {
+            cursor.remove();
             toggleSendButton(true);
             isProcessing = false;
         };
@@ -87,27 +100,6 @@
         return messageElement; // Retorna o elemento para atualização futura
     }
 
-    // Função para formatar o texto em frases legíveis
-    function formatText(text) {
-        // Substitui espaços múltiplos por um único espaço
-        let formatted = text.replace(/\s+/g, ' ');
-
-        // Adiciona quebras de linha após cada ponto final e faz a formatação de parágrafos
-        formatted = formatted.replace(/([.!?])\s*(?=\S)/g, '$1<br><br>');
-
-        return formatted;
-    }
-
-    function updateBotMessage(newChunk) {
-        const botMessages = chatWindow.querySelectorAll('.message.bot');
-        const lastBotMessage = botMessages[botMessages.length - 1];
-        if (lastBotMessage) {
-            lastBotMessage.innerHTML += newChunk;
-        } else {
-            displayMessage(newChunk, 'bot');
-        }
-    }
-
     function toggleSendButton(isEnabled) {
         sendButton.disabled = !isEnabled;
         sendButton.style.cursor = isEnabled ? 'pointer' : 'not-allowed';
@@ -121,7 +113,5 @@
         }
     });
   </script>
-
 </body>
 </html>
-
