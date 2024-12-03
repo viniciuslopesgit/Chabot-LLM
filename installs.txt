@@ -16,3 +16,16 @@ server gunicorn
 python3 -m gunicorn -b 0.0.0.0:5000 app:app --workers 4 --worker-class gevent &
 nginx
 vim /etc/nginx/nginx.config
+
+
+
+
+
+
+
+
+
+
+
+docker compose up --build
+ollama run no container criado pelo compose

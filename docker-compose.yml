@@ -18,7 +18,7 @@ services:
     image: ollama/ollama:latest  # Supondo que o Ollama tenha uma imagem oficial no Docker Hub
     container_name: ollama-server
     ports:
-      - "11434:11434"  # A porta 11434 é mapeada para acessar o serviço
+      - "11435:11434"  # A porta 11434 é mapeada para acessar o serviço. CONTAINER:PORTA LOCAL
     networks:
       - app-network
 

@@ -8,7 +8,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 import app
 
-OLLAMA_URL = "http://172.18.0.2:11434"  # Endereço da instância do Ollama
+OLLAMA_URL = "http://0.0.0.0:11434"  # Endereço da instância do Ollama
 MODEL_NAME = "qwen2:1.5b"
 
 # Calcula a similaridade entre a pergunta e o chunk
@@ -20,20 +20,15 @@ def calc_similarity(question, chunk):
     return similarity
 
 # Responde à pergunta com base no conteúdo extraído do PDF usando embeddings
-def pdf_search_answer(path, question):
+def pdf_search_answer_stream(path, question):
     text = load_txt(path)
     chunks = chunk_text(text)
-    # Recupera o chunk mais relevante
     best_chunk = retrieve_best_chunk(question, chunks)
     conversation_context = app.get_conversation_context_from_session()
-    # Inclui o histórico no cálculo da similaridade (aqui consideramos também o contexto da conversa)
-    conversation_text = " ".join([entry["content"] for entry in conversation_context])  # Histórico como string
-    extended_question = f"{conversation_text} {question}"  # Combina histórico com a nova pergunta
-    similarity = calc_similarity(extended_question, best_chunk)  # Calcula similaridade com o histórico considerado
+    conversation_text = " ".join([entry["content"] for entry in conversation_context])
+    extended_question = f"{conversation_text} {question}"
+    similarity = calc_similarity(extended_question, best_chunk)
     
-    print(f"Similaridade entre a pergunta e o chunk: {similarity:.4f}")
-    
-    # Cria o prompt para o Ollama com base no chunk relevante e no histórico
     if similarity >= 0.02:
         prompt = f"""
         Baseado no seguinte texto:
@@ -51,17 +46,18 @@ def pdf_search_answer(path, question):
         {question}
         """
     
-    # Adiciona a pergunta no histórico de conversa
     conversation_context.append({"role": "user", "content": question})
-    
-    # Interage com o modelo Ollama e obtém a resposta
-    answer = interagir_ollama_stream(prompt)
-    
-    # Atualiza o histórico com a resposta do modelo
-    update_history(question, answer)
-    
-    return answer
-    
+    for chunk in interagir_ollama_stream(prompt):
+        yield chunk
+
+
+# Função para aplicar formatação HTML básica (exemplo)
+def aplicar_formato_html(texto):
+    # Exemplo simples: transformar partes do texto em negrito, itálico ou adicionar quebras de linha
+    texto = texto.replace("\n", "<br>")  # Adiciona quebra de linha onde há novas linhas
+    texto = texto.replace("**", "<b>").replace("**", "</b>")  # Exemplo de negrito
+    texto = texto.replace("*", "<i>").replace("*", "</i>")  # Exemplo de itálico
+    return texto
 
 # Envia uma pergunta ao servidor Ollama e processa a resposta em streaming
 def interagir_ollama_stream(pergunta):
@@ -73,28 +69,24 @@ def interagir_ollama_stream(pergunta):
         "messages": pergunta
     }
     try:
-        print(f"Enviando solicitação para {url} com payload: {payload}")
         with requests.post(url, json=payload, stream=True) as response:
             response.raise_for_status()
-            answer = ""
-            print("\n >> Ollama: ", end="", flush=True)
             for line in response.iter_lines(decode_unicode=True):
                 if line:
                     try:
                         data = json.loads(line)
                         if "message" in data and "content" in data["message"]:
                             part = data["message"]["content"]
-                            print(part, end="", flush=True)
-                            answer += part
+                            formatted_part = aplicar_formato_html(part)  # Aplica formatação HTML
+                            print(formatted_part, end="", flush=True)  # Imprime o texto formatado
+                            yield formatted_part
                         if data.get("done", False):
                             break
                     except json.JSONDecodeError:
-                        print("Erro ao decodificar JSON:", flush=True)
-            print()
-            return answer
+                        yield "Erro ao decodificar JSON."
     except requests.exceptions.RequestException as e:
-        print(f"Erro ao se conectar ao Ollama: {e}")
-        return "Erro na conexão com o servidor Ollama"
+        yield f"Erro ao se conectar ao Ollama: {e}"
+
 
 # Função principal
 def main():
