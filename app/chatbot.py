@@ -100,3 +100,5 @@ def main():
             break
         # Responde com base no conteúdo do PDF usando embeddings
         pdf_search_answer("pdf/txt/output.txt", pergunta)
+
+
