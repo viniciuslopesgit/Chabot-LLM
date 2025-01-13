@@ -6,11 +6,6 @@ from sentence_transformers import SentenceTransformer
 # Inicializa o modelo para embeddings (usando o Sentence-BERT)
 embedder = SentenceTransformer('all-MiniLM-L6-v2')
 
-# Carrega o texto extraído do ficheiro .txt
-def load_txt(path):
-    with open(path, "r", encoding="utf-8") as f:
-        return f.read()
-
 # Divide o texto em "chunks" de tamanho adequado
 def chunk_text(text, max_chunk_size=1000):
     chunks = []

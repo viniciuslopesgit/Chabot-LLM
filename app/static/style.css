@@ -168,4 +168,11 @@ body {
   }
 }
 
-
+.code-block {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+  white-space: pre-wrap; /* Para que o código se ajuste ao tamanho da tela */
+}

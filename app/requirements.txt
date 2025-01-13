@@ -1,3 +1,4 @@
+chromadb
 flask
 pymupdf
 numpy
