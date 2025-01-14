@@ -26,6 +26,7 @@ collection_name = "pdf_embeddings"
 if collection_name not in client.list_collections():
     collection = client.create_collection(
         name=collection_name,
+        metadata={"hnsw:space": "cosine"},
         embedding_function=embedding_functions.SentenceTransformerEmbeddingFunction('all-MiniLM-L6-v2')
     )
 else:
@@ -57,18 +58,20 @@ def upload_file():
     file.save(filepath)
     # Extrai convert 'pdf' em 'txt'
     pdf_upload.pdf_extract(filepath)
-    # Lê o ficheiro extraido
-    text = pdf_upload.load_txt('pdf/txt/output.txt')
+    # Lê o ficheiro extraido e converte para todas as letras em minusculas
+    text_lower = pdf_upload.load_txt('pdf/txt/output.txt')
+    text = text_lower.lower()
     # Cria chunks
     chunks = pdf_upload.chunk_text(text)
     # Cria embeddings para os chunks
-    pdf_upload.make_embeddings(chunks)    
+    pdf_upload.make_embeddings(chunks, filename) 
     return redirect(url_for('main'))
 
 
 @app.route("/ask", methods=["GET"])
 def ask():
     user_message = request.args.get("message")
+    user_message = user_message.lower()
     if not user_message:
         return "data: Erro: Mensagem inválida.\n\n", 400
 
@@ -77,7 +80,7 @@ def ask():
             print(f"\n\n\n --> Pergunta recebida: {user_message}\n\n\n")
 
             # Gera embedding da pergunta
-            question_embedding = collection._embedding_function(user_message)
+            question_embedding = embedding_function([user_message])[0]
             # print(f"Embedding inicial: {type(question_embedding)} - {len(question_embedding)}")
             
             # Ajustar formato do embedding
@@ -87,8 +90,6 @@ def ask():
             # Garantir que question_embedding seja uma lista de floats/ints e não uma lista de arrays
             if isinstance(question_embedding, list) and isinstance(question_embedding[0], list):
                 question_embedding = question_embedding[0]  # Achar a primeira lista e passar ela
-
-            # print(f"Embedding ajustado: {type(question_embedding)} - {len(question_embedding)}")
 
             # Realizar a consulta
             results = collection.query(
@@ -103,10 +104,7 @@ def ask():
 
             # Ajustar o loop para percorrer corretamente os dados
             chunks = []
-            chunks = [str(document) for document in results['documents'][0]]
-            print(chunks)
-            # print(f"Chunks encontrados: {chunks}")
-
+            chunks = [str(document) for document in results['documents']]
             answer_generator = chatbot.pdf_search_answer_stream(chunks, user_message)
             for chunk in answer_generator:
                 if chunk.strip():  # Envia a resposta somente se houver conteúdo

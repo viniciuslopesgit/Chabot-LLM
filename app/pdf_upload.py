@@ -50,7 +50,7 @@ def chunk_text(text, max_chunk_size=2000):
     return chunks
 
 # Gera embeddings
-def make_embeddings(text):
+def make_embeddings(text, filename):
     for idx, chunk in enumerate(text):
         # Gera embeddings para o chunks
         embedding = collection._embedding_function(chunk)
@@ -58,18 +58,18 @@ def make_embeddings(text):
         store_ids = [] # Debug
         unique_id = str(uuid.uuid4())
         collection.add(
-                ids=[unique_id],
+                ids=[f"{filename}_{unique_id}"],
                 documents=[chunk],
                 metadatas=[{"chunk_index": idx}],
                 embeddings=[embedding[idx]],
         )
             # Exibe o chunk e seu embedding no console
         # DEBUG
-        print(f"Chunk {idx + 1}:")
-        print(chunk)
-        print("\nEmbedding:")
-        print(embedding)
-        print("=" * 5)
+        # print(f"Chunk {idx + 1}:")
+        # print(chunk)
+        # print("\nEmbedding:")
+        # print(embedding)
+        # print("=" * 5)
     print(f"\n\n{len(text)} chunks e embeddings salvos com sucesso no ChromaDB")
 
 def pdf_extract(filepath):

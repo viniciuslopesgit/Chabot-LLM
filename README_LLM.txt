@@ -13,9 +13,14 @@
  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 
+------------------------------------------------------------------------
+ INSTRUÇÕES DE USO:
+------------------------------------------------------------------------
+	1. Faça upload dos ficheiros PDFs do qual você queira que o chatbot tenha conhecimento sobre o assunto a ser importado para o modelo.
+	2. É de extrema importância que o título dos pdfs sejam relacionados ao conteúdo do pdf a ser indexado.
+	3. Converse normalmente com o chatbot.
 
-
- -------------------------------------------------------------------------
+-------------------------------------------------------------------------
  IMPORTANT LINKS:
 -------------------------------------------------------------------------
  https://www.youtube.com/watch?v=TMaQt8rN5bE

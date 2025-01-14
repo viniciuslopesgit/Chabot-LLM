@@ -1,8 +1,6 @@
 import requests
 import json
 import numpy as np
-from pdf_chunk import  retrieve_best_chunk, chunk_text
-from chat_history import update_history, get_conversation_context
 import app
 import re
 
@@ -21,12 +19,12 @@ def calc_similarity(user_message, top_k=3):
 # Responde à pergunta com base no conteúdo extraído do PDF usando embeddings
 def pdf_search_answer_stream(chunks, question):
 
-    print(f"\n\n\nChunks recebidos +ara a pergunta: {question}\n\n\n")
+    print(f"\n\n\nChunks recebidos para a pergunta: '{question}'\n\n\n")
     print(f"Chunks: {chunks}")
     prompt = f"""
     Baseado no seguinte texto:
     {chunks}
-    Responda à seguinte pergunta passo a passo de forma detalhada:
+    Responda à seguinte pergunta:
     {question}
     """
     
@@ -41,7 +39,6 @@ def aplicar_formato_html(texto):
     texto = re.sub(r"\*\*(.*?)\*\*", r"<b>\1</b>", texto)
     # Formatação de itálico, substituindo * por <i></i>
     texto = re.sub(r"\*(.*?)\*", r"<i>\1</i>", texto)
-
     return texto
 
 # Envia uma pergunta ao servidor Ollama e processa a resposta em streaming
