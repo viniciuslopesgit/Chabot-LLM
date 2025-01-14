@@ -13,6 +13,9 @@
  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 PARA FAZER:
+	- Melhorar chunks:
+		- Deixa-los mais legíveis
+		- Com menos carácteres especiais
 	- Implementar LangSmith
 
 ------------------------------------------------------------------------
