@@ -2,7 +2,6 @@ stages:
   - build
   - deploy
 
-# Etapa de build para validar e preparar as imagens
 build:
   stage: build
   image: docker:24.0
@@ -11,12 +10,11 @@ build:
   variables:
     DOCKER_DRIVER: overlay2
   script:
-    - docker-compose -f docker-compose.yml pull # Baixar as últimas imagens
-    - docker-compose -f docker-compose.yml config -q # Validar o arquivo docker-compose
+    - docker-compose -f docker-compose.yml pull
+    - docker-compose -f docker-compose.yml config -q
   only:
     - main
 
-# Etapa de deploy para iniciar os serviços
 deploy:
   stage: deploy
   image: docker:24.0
@@ -25,7 +23,7 @@ deploy:
   variables:
     DOCKER_DRIVER: overlay2
   script:
-    - docker-compose -f docker-compose.yml pull # Certifique-se de usar as últimas imagens
-    - docker-compose -f docker-compose.yml up -d --build # Levantar os containers
+    - docker-compose -f docker-compose.yml pull
+    - docker-compose -f docker-compose.yml up -d --build
   only:
     - main
