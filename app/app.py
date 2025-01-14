@@ -67,7 +67,6 @@ def upload_file():
     pdf_upload.make_embeddings(chunks, filename) 
     return redirect(url_for('main'))
 
-
 @app.route("/ask", methods=["GET"])
 def ask():
     user_message = request.args.get("message")
@@ -77,31 +76,25 @@ def ask():
 
     def generate_response():
         try:
-            print(f"\n\n\n --> Pergunta recebida: {user_message}\n\n\n")
-
+            print(f"\n\n --> Pergunta recebida: {user_message}\n")
             # Gera embedding da pergunta
             question_embedding = embedding_function([user_message])[0]
-            # print(f"Embedding inicial: {type(question_embedding)} - {len(question_embedding)}")
-            
             # Ajustar formato do embedding
             if isinstance(question_embedding, list) and isinstance(question_embedding[0], numpy.ndarray):
-                question_embedding = [emb.tolist() if isinstance(emb, numpy.ndarray) else emb for emb in question_embedding]
-            
+                question_embedding = [emb.tolist() if isinstance(emb, numpy.ndarray) else emb for emb in question_embedding]   
             # Garantir que question_embedding seja uma lista de floats/ints e não uma lista de arrays
             if isinstance(question_embedding, list) and isinstance(question_embedding[0], list):
                 question_embedding = question_embedding[0]  # Achar a primeira lista e passar ela
-
             # Realizar a consulta
             results = collection.query(
                 query_embeddings=[question_embedding],  # Passando a lista de floats diretamente
-                n_results=5
+                n_results=3,
+                include=['documents', 'distances', 'embeddings', 'metadatas'],
             )
-
             # Processar resultados
             if not results or not results["documents"]:
                 yield "Nenhuma resposta encontrada para a sua pergunta.\n\n"
                 return
-
             # Ajustar o loop para percorrer corretamente os dados
             chunks = []
             chunks = [str(document) for document in results['documents']]
@@ -112,10 +105,8 @@ def ask():
         except Exception as e:
             print(f"Erro interno: {str(e)}")
             yield f"Erro interno do servidor: {str(e)}\n\n"
-
+    
     return Response(stream_with_context(generate_response()), content_type="text/event-stream")
 
-
-
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5001)
+    app.run(debug=True, host="0.0.0.0", port=15991)

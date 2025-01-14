@@ -63,14 +63,7 @@ def make_embeddings(text, filename):
                 metadatas=[{"chunk_index": idx}],
                 embeddings=[embedding[idx]],
         )
-            # Exibe o chunk e seu embedding no console
-        # DEBUG
-        # print(f"Chunk {idx + 1}:")
-        # print(chunk)
-        # print("\nEmbedding:")
-        # print(embedding)
-        # print("=" * 5)
-    print(f"\n\n{len(text)} chunks e embeddings salvos com sucesso no ChromaDB")
+    print(f"\n\n{len(text)} \n\n --> Chunks e embeddings salvos com sucesso no ChromaDB\n")
 
 def pdf_extract(filepath):
     # Cria a pasta 'txt' caso não exista
@@ -82,5 +75,5 @@ def pdf_extract(filepath):
             text = page.get_text()
             out.write(text)
             out.write("\n" + "="*80 + "\n")  # Adiciona uma linha separadora entre páginas, se necessário
-    print("Texto extraído com sucesso para pdf/txt/output.txt")
+    print("\n\n --> Texto extraído com sucesso para pdf/txt/output.txt\n")
 

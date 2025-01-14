@@ -18,16 +18,14 @@ def calc_similarity(user_message, top_k=3):
 
 # Responde à pergunta com base no conteúdo extraído do PDF usando embeddings
 def pdf_search_answer_stream(chunks, question):
-
-    print(f"\n\n\nChunks recebidos para a pergunta: '{question}'\n\n\n")
-    print(f"Chunks: {chunks}")
+    print(f"\n\nChunks: \n{chunks}")
     prompt = f"""
-    Baseado no seguinte texto:
+    -> Baseado nos seguintes chunks:
     {chunks}
-    Responda à seguinte pergunta:
+    -> Nunca mencione a palabra chunks, ao invés disso diga: banco de dados
+    -> Responda à seguinte pergunta:
     {question}
-    """
-    
+    """ 
     for chunk in interagir_ollama_stream(prompt):
         yield chunk
 

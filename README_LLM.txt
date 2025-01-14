@@ -12,6 +12,15 @@
  $                                                     $
  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
+------------------------------------------------------------------------
+ MIN REQUIREMENTS:
+------------------------------------------------------------------------
+	- pip install --upgrade pip
+	- 16G RAM
+	- Python3.10.12
+	- Server Ollama:11434
+	- LLM Qwen2:1.5b
+
 
 ------------------------------------------------------------------------
  INSTRUÇÕES DE USO:
@@ -19,6 +28,7 @@
 	1. Faça upload dos ficheiros PDFs do qual você queira que o chatbot tenha conhecimento sobre o assunto a ser importado para o modelo.
 	2. É de extrema importância que o título dos pdfs sejam relacionados ao conteúdo do pdf a ser indexado.
 	3. Converse normalmente com o chatbot.
+
 
 -------------------------------------------------------------------------
  IMPORTANT LINKS:
@@ -85,5 +95,41 @@
 ---------------------------------------------------------------------------- 
  docker compose up --build
  ollama run no container criado pelo compose
+
+
+
+
+OUTROS:
+cd app/
+
+apt update
+apt install python3 python3.10-venv pip gunicorn git -y
+
+git clone https://github.com/viniciuslopesgit/chatbot.git
+cd chatbot
+python3 -m venv menv
+source menv/bin/activate
+pip install -r requirements.txt
+ollama run qwen2:1.5b
+
+ajustar o ip para o ip local do container
+
+server gunicorn
+python3 -m gunicorn -b 0.0.0.0:5000 app:app --workers 4 --worker-class gevent &
+nginx
+vim /etc/nginx/nginx.config
+
+
+
+
+
+
+
+
+
+
+
+docker compose up --build
+ollama run no container criado pelo compose
 
 
