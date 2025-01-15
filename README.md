@@ -1,5 +1,6 @@
 # Ragbot.io 🤖
 
+![Captura de ecrã de 2025-01-15 13-05-32](https://github.com/user-attachments/assets/d054b1c3-0934-48b9-b927-31342ff71e99)
 
 ### Min Requirements:
 - System: Linux/Windows/Mac
