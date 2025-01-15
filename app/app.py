@@ -11,9 +11,7 @@ import pdf_upload
 load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = 'chave_secreta_para_sessao'
 
-# VARIÁVEIS DE AMBIENTE
 UPLOAD_FOLDER = os.getenv("UPLOAD_FOLDER")
 ALLOWED_EXTENSIONS = os.getenv("ALLOWED_EXTENSIONS")
 app.config['UPLOAD_FOLDER'] = os.getenv("UPLOAD_FOLDER")
