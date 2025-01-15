@@ -21,7 +21,7 @@
  LOCAL INSTALLATION:
 -------------------------------------------------------------------------- 
  1. Create a local directory:
- git clone https://github.com/viniciuslopesgit/chatbot.git
+ 	git clone https://github.com/viniciuslopesgit/chatbot.git
 
  2. Navigate to the folder
  cd chatbot
