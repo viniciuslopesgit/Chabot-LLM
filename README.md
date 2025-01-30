@@ -35,6 +35,7 @@ pip install -r requirements.txt
 
 Install the used LLMs version:
 ```
+install ollama
 ollama pull ''
 ```
 
